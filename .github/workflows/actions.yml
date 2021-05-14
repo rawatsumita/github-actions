@@ -1,0 +1,14 @@
+name: Actions workflows
+on: [push]
+jobs:
+  check-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check first action
+        id: greet
+        uses: actions/hello-world-javascript-action@mv1.1
+        with:
+         who-to-greet: 'Mona the Octocat'
+      - name: Log generating time
+        run: echo "${{steps.greet.outputs.time}}"
+        
