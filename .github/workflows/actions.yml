@@ -11,4 +11,15 @@ jobs:
          who-to-greet: 'Mona the Octocat'
       - name: Log generating time
         run: echo "${{steps.greet.outputs.time}}"
-        
+      - name: list and pwd commands
+        run: |
+         ls -a
+         pwd
+      - name: github action checkout
+        uses: actions/checkout@v2
+      - name: after checkout
+        run: |
+         ls -a
+         pwd
+         
+          
